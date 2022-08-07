@@ -1,0 +1,11 @@
+GET http://localhost:3001/api/auth/
+
+###
+
+POST http://localhost:3001/api/auth/login
+Content-Type: application/json
+
+{
+  "unm": "tony",
+  "pwd": "123"
+}
