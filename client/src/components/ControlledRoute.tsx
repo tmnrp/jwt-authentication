@@ -1,6 +1,6 @@
 import React from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import { useGlobalStore } from "../store/store";
+import { useAuthStore } from "../store/AuthStore";
 
 //
 interface ControlledRouteProps {
@@ -11,8 +11,7 @@ export const ControlledRoute: React.FC<ControlledRouteProps> = ({
 }) => {
   //
   const location = useLocation();
-  const { user } = useGlobalStore();
-  console.log("user", user);
+  const { user } = useAuthStore();
 
   // login path redirection
   if (location.pathname === "/login") {

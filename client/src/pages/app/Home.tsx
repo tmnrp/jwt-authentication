@@ -1,8 +1,8 @@
 import { Box, Button } from "@mui/material";
-import { useGlobalStore } from "../../store/store";
+import { useAuthStore } from "../../store/AuthStore";
 
 export const Home = () => {
-  const { doLogout } = useGlobalStore();
+  const { doLogout } = useAuthStore();
 
   //
   return (
