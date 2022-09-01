@@ -1,29 +1,22 @@
 import express, { Application } from "express";
 import * as dotenv from "dotenv";
-import { routes } from "./routes/index.routes";
-import { connectDB } from "./config/db";
+import cors from "cors";
+import { corsOptions } from "./config/corsOptions";
 
 //
 dotenv.config({ path: "./.env.dev" });
 
 //
 const app: Application = express();
-const port = 3001;
-
-//connect to db
-connectDB();
-
-// Body parsing Middleware
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+const PORT = process.env.PORT || 3001;
 
 //
-app.use(routes);
+app.use(cors(corsOptions));
 
 //
 try {
-  app.listen(port, (): void => {
-    console.log(`Connected successfully on port ${port}`);
+  app.listen(PORT, (): void => {
+    console.log(`Connected successfully on port ${PORT}`);
   });
 } catch (error: any) {
   console.error(`Error occured: ${error.message}`);
