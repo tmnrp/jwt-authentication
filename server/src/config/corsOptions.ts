@@ -1,4 +1,4 @@
-import { allowedOrigins } from "./allowedOrigins";
+const allowedOrigins = ["http://localhost:3000"];
 
 //
 export const corsOptions = {
@@ -10,5 +10,4 @@ export const corsOptions = {
     }
   },
   credentials: true,
-  optionsSuccessStatus: 200,
 };
